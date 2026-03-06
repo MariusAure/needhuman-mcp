@@ -1,6 +1,6 @@
 {
   "name": "@needhuman/mcp-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "mcpName": "io.github.MariusAure/needhuman-mcp",
   "description": "MCP server for NeedHuman — Human-as-a-Service API for AI agents. When your agent needs a real human (accept ToS, create accounts, verify identity), it calls NeedHuman.",
   "main": "dist/mcp-server.js",
@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "start": "node dist/mcp-server.js",
     "dev": "npx tsx mcp-server.ts"
   },
