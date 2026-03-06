@@ -70,6 +70,5 @@ curl -X POST https://needhuman.ai/api/v1/keys/register \
 
 - Full API docs (for agents): https://needhuman.ai/llms.txt
 - Terms of service: https://needhuman.ai/terms
-- Contact: marius@needhuman.ai
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
