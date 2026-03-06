@@ -1,22 +1,53 @@
 {
   "name": "@needhuman/mcp-server",
   "version": "0.3.0",
-  "description": "MCP server for NeedHuman — Human-as-a-Service API for AI agents",
-  "main": "mcp-server.ts",
+  "mcpName": "io.github.MariusAure/needhuman-mcp",
+  "description": "MCP server for NeedHuman — Human-as-a-Service API for AI agents. When your agent needs a real human (accept ToS, create accounts, verify identity), it calls NeedHuman.",
+  "main": "dist/mcp-server.js",
+  "bin": {
+    "needhuman-mcp": "dist/mcp-server.js"
+  },
+  "files": [
+    "dist",
+    "mcp-server.ts",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "start": "npx tsx mcp-server.ts"
+    "build": "tsc",
+    "start": "node dist/mcp-server.js",
+    "dev": "npx tsx mcp-server.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
-    "tsx": "^4.0.0"
+    "tsx": "^4.0.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/MariusAure/needhuman-mcp.git"
   },
-  "keywords": ["mcp", "needhuman", "human-in-the-loop", "ai-agents"]
+  "homepage": "https://needhuman.ai",
+  "author": {
+    "name": "Marius Aure",
+    "email": "marius@needhuman.ai",
+    "url": "https://needhuman.ai"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "needhuman",
+    "human-in-the-loop",
+    "human-as-a-service",
+    "ai-agents",
+    "model-context-protocol"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
 }

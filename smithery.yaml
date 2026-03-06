@@ -1,0 +1,30 @@
+# Smithery configuration: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+
+configSchema:
+  type: object
+  required:
+    - apiKey
+  properties:
+    apiKey:
+      type: string
+      description: "Your NeedHuman API key. Get one free (3 tasks) at https://needhuman.ai/api/v1/keys/register"
+    apiUrl:
+      type: string
+      description: "API base URL (default: https://needhuman.ai)"
+
+commandFunction: |-
+  (config) => ({
+    command: 'npx',
+    args: ['-y', '@needhuman/mcp-server'],
+    env: {
+      NEEDHUMAN_API_KEY: config.apiKey,
+      NEEDHUMAN_API_URL: config.apiUrl || 'https://needhuman.ai'
+    }
+  })
+
+exampleConfig:
+  apiKey: "nh_your_api_key_here"
+  apiUrl: "https://needhuman.ai"

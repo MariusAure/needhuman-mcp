@@ -2,32 +2,23 @@
 
 MCP server for [NeedHuman](https://needhuman.ai) — Human-as-a-Service API for AI agents.
 
-When your agent hits a step requiring a real human with a browser — accepting terms of service,
+When your agent hits a step it requires any real human with a browser — accepting terms of service,
 creating an account, completing identity verification — it calls NeedHuman.
-A human completes the task, submits proof, and the agent continues.
+A human (yes, it's basically me in the beginning) completes the task, submits proof, and the agent continues.
 
 ## Install
 
-**Option A — one-line install:**
+**Option A — npx (recommended):**
 
-```bash
-curl -sf "https://needhuman.ai/api/v1/setup?key=YOUR_KEY" | bash
-```
-
-Writes `~/.needhuman/mcp-server.ts` and adds NeedHuman to `~/.claude/settings.json`.
-
-**Option B — manual config:**
-
-Add to your MCP client config (e.g. `~/.claude/settings.json`):
+Add to your MCP client config (e.g. `~/.claude/settings.json` or `.cursor/mcp.json`):
 
 ```json
 {
   "mcpServers": {
     "needhuman": {
       "command": "npx",
-      "args": ["tsx", "~/.needhuman/mcp-server.ts"],
+      "args": ["-y", "@needhuman/mcp-server"],
       "env": {
-        "NEEDHUMAN_API_URL": "https://needhuman.ai",
         "NEEDHUMAN_API_KEY": "YOUR_KEY"
       }
     }
@@ -35,7 +26,15 @@ Add to your MCP client config (e.g. `~/.claude/settings.json`):
 }
 ```
 
-Get an API key (3 free tasks, no signup):
+**Option B — one-line install (Claude Code):**
+
+```bash
+curl -sf "https://needhuman.ai/api/v1/setup?key=YOUR_KEY" | bash
+```
+
+Writes `~/.needhuman/mcp-server.ts` and adds NeedHuman to `~/.claude/settings.json`.
+
+**Get an API key** (3 free tasks, no signup):
 
 ```bash
 curl -X POST https://needhuman.ai/api/v1/keys/register \
@@ -53,11 +52,11 @@ curl -X POST https://needhuman.ai/api/v1/keys/register \
 
 ## Status and limitations
 
-- Pre-v1.0. API is stable but may change with notice.
+- Pre-v1.0. API is stable but may change without notice.
 - Tasks are completed by the founders. Coverage: weekdays CET business hours, best-effort evenings.
-- Response time: 2–30 minutes during coverage hours.
+- Response time: 2–30 minutes during coverage hours, again best effort.
 - Tasks with expiring links (< 30 min TTL) may time out before completion.
-- 3 free tasks per API key. Pricing for additional tasks: contact marius@needhuman.ai.
+- 3 free tasks per API key. Pricing for additional tasks: contact marius.bergvik.aure@gmail.com.
 - Polling only. No webhooks yet.
 - Not accepted: tasks requiring credential storage, persistent login sessions, or financial transactions.
 

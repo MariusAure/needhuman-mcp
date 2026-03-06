@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.MariusAure/needhuman-mcp",
+  "title": "NeedHuman",
+  "description": "Human-as-a-Service for AI agents. When your agent needs a real human (accept ToS, create accounts, verify identity), it calls NeedHuman. A human completes the task and the agent continues.",
+  "version": "0.3.0",
+  "websiteUrl": "https://needhuman.ai",
+  "repository": {
+    "url": "https://github.com/MariusAure/needhuman-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@needhuman/mcp-server",
+      "version": "0.3.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "environmentVariables": [
+    {
+      "name": "NEEDHUMAN_API_KEY",
+      "description": "Your NeedHuman API key. Get one free (3 tasks): curl -X POST https://needhuman.ai/api/v1/keys/register -H 'Content-Type: application/json' -d '{\"name\": \"my-agent\"}'",
+      "isRequired": true,
+      "isSecret": true
+    },
+    {
+      "name": "NEEDHUMAN_API_URL",
+      "description": "API base URL. Defaults to https://needhuman.ai",
+      "isRequired": false,
+      "isSecret": false
+    }
+  ]
+}
