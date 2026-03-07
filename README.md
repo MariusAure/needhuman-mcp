@@ -8,7 +8,19 @@ A human (yes, it's basically me in the beginning) completes the task, submits pr
 
 ## Install
 
-**Option A — npx (recommended):**
+**Option A — Remote HTTP (zero install):**
+
+Connect directly to the hosted MCP endpoint — no npm, no local server:
+
+```
+URL: https://needhuman.ai/mcp
+Transport: Streamable HTTP
+Auth: Bearer YOUR_KEY (in Authorization header)
+```
+
+Works with Claude.ai, Smithery, and any MCP client that supports HTTP transport.
+
+**Option B — npx (local stdio):**
 
 Add to your MCP client config (e.g. `~/.claude/settings.json` or `.cursor/mcp.json`):
 
@@ -26,7 +38,7 @@ Add to your MCP client config (e.g. `~/.claude/settings.json` or `.cursor/mcp.js
 }
 ```
 
-**Option B — one-line install (Claude Code):**
+**Option C — one-line install (Claude Code):**
 
 ```bash
 curl -sf "https://needhuman.ai/api/v1/setup?key=YOUR_KEY" | bash
