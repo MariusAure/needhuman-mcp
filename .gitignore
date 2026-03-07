@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .DS_Store
+
+# MCP Registry auth tokens
+.mcpregistry_*
+
+# Smithery build artifacts
+.smithery/
