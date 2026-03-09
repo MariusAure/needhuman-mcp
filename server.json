@@ -5,6 +5,7 @@
   "description": "Human-as-a-Service for AI agents. Delegate tasks that need a real human, get results via API.",
   "version": "0.3.2",
   "websiteUrl": "https://needhuman.ai",
+  "icon": "https://needhuman.ai/icon.svg",
   "repository": {
     "url": "https://github.com/MariusAure/needhuman-mcp",
     "source": "github"
