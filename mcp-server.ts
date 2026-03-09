@@ -20,7 +20,7 @@ function createServer(config?: { apiKey?: string; apiUrl?: string }) {
 
   const server = new McpServer({
     name: "needhuman",
-    version: "0.3.1",
+    version: "0.3.2",
   });
 
   server.tool(
@@ -288,4 +288,10 @@ async function main() {
   await server.connect(transport);
 }
 
-main().catch(console.error);
+// Guard: only start stdio transport when run directly (not when imported by Smithery scanner etc.)
+const isDirectRun =
+  typeof require !== "undefined" && require.main === module;
+
+if (isDirectRun) {
+  main().catch(console.error);
+}
