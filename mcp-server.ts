@@ -47,7 +47,8 @@ Example:
   2. Accept the terms of service.
   REPLY WITH: confirmation URL, account ID
 
-Typical completion: 2-30 minutes. Use check_task_status to poll.
+Free tier included on registration. Each task costs 1 credit. Returns 402 when credits are exhausted.
+Fastest during European business hours (CET). Tasks submitted outside these hours may take longer. Typical completion: 2-30 minutes. Use check_task_status to poll.
 
 Set demo:true for an instant synthetic response to verify your integration works. No credits consumed.`,
     {
