@@ -1,5 +1,7 @@
 # NeedHuman MCP Server
 
+[![need-human MCP server](https://glama.ai/mcp/servers/MariusAure/need-human/badges/card.svg)](https://glama.ai/mcp/servers/MariusAure/need-human)
+
 MCP server for [NeedHuman](https://needhuman.ai) — Human-as-a-Service API for AI agents.
 
 When your agent hits a step it requires any real human with a browser — accepting terms of service,
