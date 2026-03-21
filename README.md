@@ -8,6 +8,10 @@ When your agent hits a step it requires any real human with a browser — accept
 creating an account, completing identity verification, submitting web forms — it calls NeedHuman.
 A human (yes, it's basically me in the beginning) completes the task, submits proof, and the agent continues.
 
+<a href="https://glama.ai/mcp/servers/@MariusAure/need-human">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@MariusAure/need-human/badge" alt="NeedHuman MCP server" />
+</a>
+
 ## Install
 
 **Option A — Remote HTTP (zero install):**
